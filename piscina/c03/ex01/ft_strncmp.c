@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 16:47:07 by esordone          #+#    #+#             */
-/*   Updated: 2022/07/27 17:21:50 by esordone         ###   ########.fr       */
+/*   Updated: 2022/07/28 19:04:01 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 
-	if (n == 0)
-		return (0);
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n)
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (0);
 }
 /*
 int	main(void)

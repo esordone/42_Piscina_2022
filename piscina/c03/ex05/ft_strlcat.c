@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 13:15:06 by esordone          #+#    #+#             */
-/*   Updated: 2022/07/28 14:15:17 by esordone         ###   ########.fr       */
+/*   Updated: 2022/07/28 19:49:16 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		k++;
 		i++;
 	}
-	while (i < size)
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (conta(dest) + conta(src));
 }
 /*

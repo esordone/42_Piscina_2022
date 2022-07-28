@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:44:47 by esordone          #+#    #+#             */
-/*   Updated: 2022/07/28 13:12:46 by esordone         ###   ########.fr       */
+/*   Updated: 2022/07/28 19:46:30 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char	*ft_strstr(char *str, char *to_find)
 	while (str[i] != '\0')
 	{
 		f = 0;
-		while (str[i + f] == to_find[f] && to_find[f] != '\0')
+		while (str[i + f] == to_find[f] && str[i + f] != '\0')
 		{
-			if (to_find[f] != '\0')
+			if (to_find[f + 1] == '\0')
 			{
-				return (str + i);
+				return (&str[i]);
 			}
 			f++;
 		}
